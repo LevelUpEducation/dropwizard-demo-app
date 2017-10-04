@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DropwizardDempApp",
+		"_postman_id": "c6782a93-0d60-28fc-8160-0807b4e54471",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pong API",
+			"request": {
+				"url": "http://localhost:8080/api/pong",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Date API",
+			"request": {
+				"url": "http://localhost:8080/api/date",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
