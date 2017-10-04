@@ -1,10 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "gradle.plugin.com.palantir.sls-packaging:gradle-sls-packaging:2.7.0"
+    }
+}
+
 group 'com.jleetutorial'
-version '1.0'
+version '1.0.0'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'checkstyle'
+apply plugin: "com.palantir.sls-java-service-distribution"
 
 checkstyle {
     project.ext.checkstyleVersion = '8.2'
@@ -36,9 +51,21 @@ checkstyle {
     }
 }
 
+distribution {
+    serviceName 'dropwizard-demo-app'
+    mainClass 'com.jleetutorial.Application'
+    args 'server', 'configuration.yml'
+    productDependency {
+        minimumVersion = "1.0.0"
+        maximumVersion = "1.0.2"
+        recommendedVersion = "1.0.1"
+    }
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
+    jcenter()
 }
 
 sourceCompatibility = 1.8
@@ -50,8 +77,10 @@ ext {
 }
 
 dependencies {
-    // Lombok
+    // DropWizard
     compile("io.dropwizard:dropwizard-core:$dropwizardVersion")
+    // Go-Java
+    compile 'com.palantir.launching:go-java-launcher:1.2.0'
     // Unit Test
     testCompile("io.dropwizard:dropwizard-testing:$dropwizardVersion")
     testCompile("junit:junit:$junitVersion")
