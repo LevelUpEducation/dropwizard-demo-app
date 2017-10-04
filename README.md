@@ -12,3 +12,9 @@
 * Find All:
 
 *curl -X GET http://localhost:8080/api/pong | json_pp*
+
+
+### Checkstyle
+
+Open in browser `${project.rootDir}//build/reports/checkstyle/main.html`
+
