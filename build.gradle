@@ -1,0 +1,30 @@
+group 'com.jleetutorial'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    dropwizardVersion = '0.8.4'
+    junitVersion = '4.12'
+    lombokVersion = '1.16.6'
+}
+
+
+dependencies {
+    // Lombok
+    compile("io.dropwizard:dropwizard-core:$dropwizardVersion")
+    compile("org.projectlombok:lombok:$lombokVersion")
+    // Unit Test
+    testCompile("junit:junit:$junitVersion")
+}
+

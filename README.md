@@ -1,7 +1,7 @@
 # dropwizard-demo-app
 
 ### Run
-* mvn clean install
+* ./gradlew build
 * java -jar target/dropwizard-demo-app-1.0.jar server configuration.yml
 
 ### Queries
