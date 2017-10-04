@@ -16,16 +16,12 @@ public class ApplicationResource {
     @GET
     @Path("/date")
     public DateResponse getDate() {
-        return DateResponse.builder()
-                .date(new Date())
-                .build();
+        return new DateResponse(new Date());
     }
 
     @GET
     @Path("/pong")
     public PongResponse getPong() {
-        return PongResponse.builder()
-                .message("pong")
-                .build();
+        return new PongResponse("pong");
     }
 }

@@ -47,14 +47,13 @@ targetCompatibility = 1.8
 ext {
     dropwizardVersion = '0.8.4'
     junitVersion = '4.12'
-    lombokVersion = '1.16.6'
 }
 
 dependencies {
     // Lombok
     compile("io.dropwizard:dropwizard-core:$dropwizardVersion")
-    compile("org.projectlombok:lombok:$lombokVersion")
     // Unit Test
+    testCompile("io.dropwizard:dropwizard-testing:$dropwizardVersion")
     testCompile("junit:junit:$junitVersion")
 }
 
