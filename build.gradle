@@ -54,7 +54,7 @@ checkstyle {
 distribution {
     serviceName 'dropwizard-demo-app'
     mainClass 'com.jleetutorial.Application'
-    args 'server', 'configuration.yml'
+    args 'server', 'var/conf/configuration.yml'
     productDependency {
         minimumVersion = "1.0.0"
         maximumVersion = "1.0.2"
